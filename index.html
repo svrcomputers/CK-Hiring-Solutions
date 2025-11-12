@@ -6,7 +6,7 @@
     <title>CK Hiring Solutions | Recruitment & Staffing Experts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
+        /* === ALL YOUR ORIGINAL CSS (unchanged) === */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -439,7 +439,7 @@
         footer {
             background: var(--dark);
             color: white;
-            padding: 60px 0 20px;
+            padding: 40px 0 20px;
         }
 
         .footer-content {
@@ -497,8 +497,8 @@
             color: #cbd5e1;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
         .social-icons {
@@ -869,6 +869,36 @@
     </style>
 </head>
 <body>
+    <!-- Firebase SDK (MODULAR) -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+      import { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+
+      // REPLACE WITH YOUR FIREBASE CONFIG
+     const firebaseConfig = {
+  apiKey: "AIzaSyATkND4K8_k7K-QPgZw-Y3qIX0VQZdEShI",
+  authDomain: "ck-hiring-solutions.firebaseapp.com",
+  projectId: "ck-hiring-solutions",
+  storageBucket: "ck-hiring-solutions.firebasestorage.app",
+  messagingSenderId: "567914930311",
+  appId: "1:567914930311:web:5d5d6fc5894687114cd822",
+  measurementId: "G-5XLGKDKMYL"
+};
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      window.firebaseDB = db;
+      window.firebaseCollection = collection;
+      window.firebaseAddDoc = addDoc;
+      window.firebaseDeleteDoc = deleteDoc;
+      window.firebaseDoc = doc;
+      window.firebaseServerTimestamp = serverTimestamp;
+      window.firebaseOnSnapshot = onSnapshot;
+      window.firebaseQuery = query;
+      window.firebaseOrderBy = orderBy;
+    </script>
+
     <!-- Date & Time -->
     <div class="datetime" id="datetime"></div>
 
@@ -877,7 +907,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-              <img src="images/logo.png" alt="logo" >
+                    <img src="images/logo.png" alt="logo">
                     <h1>CK Hiring Solutions</h1>
                 </div>
                 <div class="mobile-menu">
@@ -1006,58 +1036,53 @@
     </section>
 
     <!-- Testimonials Section -->
-  <!-- Testimonials Section -->
-<section id="testimonials" class="testimonials">
-    <div class="container">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-image">
-                    <img src="images/hcl.png" alt="HCL" class="company-logo">
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/hcl.png" alt="HCL" class="company-logo">
+                    </div>
+                    <p class="testimonial-text">"CK Hiring Solutions has been instrumental in helping us scale our technology teams. Their understanding of our technical requirements and company culture has resulted in exceptional hires who have made significant contributions to our projects."</p>
+                    <p class="testimonial-company">HCL Technologies</p>
                 </div>
-                <p class="testimonial-text">"CK Hiring Solutions has been instrumental in helping us scale our technology teams. Their understanding of our technical requirements and company culture has resulted in exceptional hires who have made significant contributions to our projects."</p>
-                
-                <p class="testimonial-company">HCL Technologies</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-image">
-                    <img src="images/tcs.png" alt="TCS" class="company-logo">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/tcs.png" alt="TCS" class="company-logo">
+                    </div>
+                    <p class="testimonial-text">"The partnership with CK Hiring Solutions has transformed our recruitment process. Their ability to source high-quality candidates across multiple domains has helped us maintain our competitive edge in the market. Highly recommended!"</p>
+                    <p class="testimonial-author">TCS</p>
                 </div>
-                <p class="testimonial-text">"The partnership with CK Hiring Solutions has transformed our recruitment process. Their ability to source high-quality candidates across multiple domains has helped us maintain our competitive edge in the market. Highly recommended!"</p>
-                <p class="testimonial-author">TCS</p>
-                
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-image">
-                    <img src="images/infosys.png" alt="Infosys" class="company-logo">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/infosys.png" alt="Infosys" class="company-logo">
+                    </div>
+                    <p class="testimonial-text">"Working with CK Hiring Solutions has been a game-changer for our organization. Their dedicated approach and deep industry knowledge have consistently delivered candidates who not only meet but exceed our expectations."</p>
+                    <p class="testimonial-company">Infosys</p>
                 </div>
-                <p class="testimonial-text">"Working with CK Hiring Solutions has been a game-changer for our organization. Their dedicated approach and deep industry knowledge have consistently delivered candidates who not only meet but exceed our expectations."</p>
-               
-                <p class="testimonial-company">Infosys</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-image">
-                    <img src="images/capgemini.png" alt="Capgemini" class="company-logo">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/capgemini.png" alt="Capgemini" class="company-logo">
+                    </div>
+                    <p class="testimonial-text">"CK Hiring Solutions demonstrates exceptional professionalism and efficiency. Their streamlined process and candidate vetting have significantly reduced our time-to-hire while improving the quality of our new team members."</p>
+                    <p class="testimonial-company">Capgemini</p>
                 </div>
-                <p class="testimonial-text">"CK Hiring Solutions demonstrates exceptional professionalism and efficiency. Their streamlined process and candidate vetting have significantly reduced our time-to-hire while improving the quality of our new team members."</p>
-                
-                <p class="testimonial-company">Capgemini</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Jobs Section -->
     <section id="jobs" class="jobs">
         <div class="container">
             <h2>Available Jobs</h2>
             <div class="jobs-grid" id="jobsContainer">
-                <!-- Jobs will be dynamically loaded here -->
+                <!-- Jobs will be loaded from Firestore -->
             </div>
         </div>
     </section>
 
-    <!-- Job Post Section (Hidden by default) -->
+    <!-- Job Post Section (Admin Only) -->
     <section id="jobPost" class="job-post" style="display: none;">
         <div class="container">
             <h2>Post a New Job</h2>
@@ -1065,15 +1090,15 @@
                 <form id="jobPostForm">
                     <div class="form-group">
                         <label for="jobTitle">Job Title</label>
-                        <input type="text" id="jobTitle" name="jobTitle" required>
+                        <input type="text" id="jobTitle" required>
                     </div>
                     <div class="form-group">
                         <label for="jobLocation">Location</label>
-                        <input type="text" id="jobLocation" name="jobLocation" required>
+                        <input type="text" id="jobLocation" required>
                     </div>
                     <div class="form-group">
                         <label for="jobDescription">Job Description</label>
-                        <textarea id="jobDescription" name="jobDescription" required></textarea>
+                        <textarea id="jobDescription" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn">Post Job</button>
@@ -1084,93 +1109,86 @@
         </div>
     </section>
 
-    <!-- Job Application Section (Hidden by default) -->
+    <!-- Job Application Section -->
     <section id="jobApplication" class="registration" style="display: none;">
         <div class="container">
             <h2>Apply for <span id="applicationJobTitle"></span></h2>
             <div class="form-container">
-
-          
-<!-- Job Application Form - Web3Forms WITHOUT File Upload -->
-<form id="jobApplicationForm" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms Required Fields -->
-    <input type="hidden" name="access_key" value="3e453b43-fc24-4d75-95d1-91ff6c1a2d33">
-    <input type="hidden" name="subject" value="New Job Application - CK Hiring Solutions">
-    <input type="hidden" name="from_name" value="CK Hiring Solutions Careers">
-    <input type="checkbox" name="botcheck" style="display: none;">
-    
-    <!-- Hidden field for job title -->
-    <input type="hidden" id="applicationJobTitle" name="job_title">
-    
-    <div class="form-row">
-        <div class="form-group">
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="first_name" required>
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="last_name" required>
-        </div>
-    </div>
-    
-    <div class="form-row">
-        <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-    </div>
-    
-    <div class="form-row">
-        <div class="form-group">
-            <label for="applicantLocation">Your Location *</label>
-            <input type="text" id="applicantLocation" name="location" placeholder="Enter your city" required>
-        </div>
-        <div class="form-group">
-            <label for="applicantZipcode">Your Zipcode *</label>
-            <input type="text" id="applicantZipcode" name="zipcode" placeholder="Enter your zipcode" required>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="position">Position Applying For *</label>
-        <input type="text" id="position" name="position" readonly required>
-    </div>
-    
-    <div class="form-group">
-        <label for="experience">Years of Experience *</label>
-        <select id="experience" name="experience" required>
-            <option value="">Select experience level</option>
-            <option value="0-1 years">0-1 years</option>
-            <option value="1-3 years">1-3 years</option>
-            <option value="3-5 years">3-5 years</option>
-            <option value="5-10 years">5-10 years</option>
-            <option value="10+ years">10+ years</option>
-        </select>
-    </div>
-    
-    <!-- REMOVED FILE UPLOAD - ADDED RESUME MESSAGE -->
-    <div class="form-group" style="background: #e8f4fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb;">
-        <h4 style="color: #2563eb; margin-bottom: 10px;">📧 Resume Submission</h4>
-        <p style="margin: 0; color: #374151;">
-            Please email your resume directly to:<br>
-            <strong>ckhiringsolutions@gmail.com</strong>
-        </p>
-        <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #6b7280;">
-            Mention the position you're applying for in the subject line.
-        </p>
-    </div>
-    
-    <div class="form-group">
-        <label for="coverLetter">Cover Letter / Comments</label>
-        <textarea id="coverLetter" name="cover_letter" placeholder="Tell us why you're a good fit for this position..."></textarea>
-    </div>
-    
-    <button type="submit" class="btn">Submit Application</button>
-</form>
+                <form id="jobApplicationForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="3e453b43-fc24-4d75-95d1-91ff6c1a2d33">
+                    <input type="hidden" name="subject" value="New Job Application - CK Hiring Solutions">
+                    <input type="hidden" name="from_name" value="CK Hiring Solutions Careers">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <input type="hidden" id="applicationJobTitle" name="job_title">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="applicantLocation">Your Location *</label>
+                            <input type="text" id="applicantLocation" name="location" placeholder="Enter your city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicantZipcode">Your Zipcode *</label>
+                            <input type="text" id="applicantZipcode" name="zipcode" placeholder="Enter your zipcode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position Applying For *</label>
+                        <input type="text" id="position" name="position" readonly required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Years of Experience *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select experience level</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5-10 years">5-10 years</option>
+                            <option value="10+ years">10+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" style="background: #e8f4fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Resume Submission</h4>
+                        <p style="margin: 0; color: #374151;">
+                            Please email your resume directly to:<br>
+                            <strong>ckhiringsolutions@gmail.com</strong>
+                        </p>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #6b7280;">
+                            Mention the position you're applying for in the subject line.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coverLetter">Cover Letter / Comments</label>
+                        <textarea id="coverLetter" name="cover_letter" placeholder="Tell us why you're a good fit for this position..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Application</button>
+                </form>
             </div>
         </div>
     </section>
@@ -1227,20 +1245,12 @@
                     </div>
                 </div>
                 <div class="contact-form">
-
-
-
-         <!-- Contact Form - Web3Forms -->
-<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms Required Fields -->
-    <input type="hidden" name="access_key" value="3e453b43-fc24-4d75-95d1-91ff6c1a2d33">
-    <input type="hidden" name="subject" value="New Contact Message - CK Hiring Solutions">
-    <input type="hidden" name="from_name" value="CK Hiring Solutions Website">
-    <input type="checkbox" name="botcheck" style="display: none;">
-  <!-- Your existing contact form fields -->
-
-                  
-	  <div class="form-group">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="3e453b43-fc24-4d75-95d1-91ff6c1a2d33">
+                        <input type="hidden" name="subject" value="New Contact Message - CK Hiring Solutions">
+                        <input type="hidden" name="from_name" value="CK Hiring Solutions Website">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                        <div class="form-group">
                             <label for="contactName">Your Name</label>
                             <input type="text" id="contactName" name="contactName" required>
                         </div>
@@ -1303,7 +1313,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 CK Hiring Solutions. All Rights Reserved.</p>
+                <p>&copy; 2023 CK Hiring Solutions. All Rights Reserved. <br>Designed & Developed By SVR COMPUTERS
             </div>
         </div>
     </footer>
@@ -1316,11 +1326,11 @@
             <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" required>
                 </div>
                 <button type="submit" class="btn" style="width: 100%;">Login</button>
                 <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--secondary);">
@@ -1341,412 +1351,244 @@
     </div>
 
     <script>
-    // API Base URL - CORRECTED
-    const API_BASE_URL = 'https://ckbackend.onrender.com/api';
+        // === ALL ORIGINAL JS + FIRESTORE INTEGRATION ===
+        let isLoggedIn = sessionStorage.getItem('ckLoggedIn') === 'true';
+        let unsubscribeJobs = null;
 
-    // Date and Time
-    function updateDateTime() {
-        const now = new Date();
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        };
-        document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
-    }
-    
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
-
-    // Mobile Menu Toggle
-    document.querySelector('.mobile-menu').addEventListener('click', function() {
-        document.getElementById('main-nav').classList.toggle('active');
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('active');
-        } else {
-            backToTopButton.classList.remove('active');
+        // Date & Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
         }
-    });
-    
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Mobile Menu
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.getElementById('main-nav').classList.toggle('active');
         });
-    });
 
-    // Track if user is logged in
-    let isLoggedIn = sessionStorage.getItem('ckLoggedIn') === 'true';
+        // Back to Top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('active', window.pageYOffset > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Update the authentication link in the navigation
-    function updateAuthLink() {
-        const authLink = document.getElementById('authLink');
-        if (isLoggedIn) {
-            authLink.textContent = 'Logout';
-            authLink.href = '#';
-            authLink.onclick = logout;
-        } else {
-            authLink.textContent = 'Login';
-            authLink.href = '#';
-            authLink.onclick = function(e) {
-                e.preventDefault();
-                document.getElementById('loginModal').classList.add('active');
-            };
-        }
-    }
-
-    // Logout function
-    function logout() {
-        isLoggedIn = false;
-        sessionStorage.removeItem('ckLoggedIn');
-        document.getElementById('jobPost').style.display = 'none';
-        updateAuthLink();
-        displayJobs();
-        alert('You have been logged out successfully.');
-    }
-
-    // API Functions
-    async function fetchJobs() {
-        try {
-            console.log('🔍 Fetching jobs from:', `${API_BASE_URL}/jobs`);
-            const response = await fetch(`${API_BASE_URL}/jobs`);
-            console.log('Response status:', response.status);
-            
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const jobs = await response.json();
-            console.log('Jobs received:', jobs);
-            return jobs;
-        } catch (error) {
-            console.error('Error fetching jobs:', error);
-            return [];
-        }
-    }
-
-    async function createJob(jobData) {
-        try {
-            console.log('📝 Creating job:', jobData);
-            const response = await fetch(`${API_BASE_URL}/jobs`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(jobData),
-            });
-            
-            console.log('Create job response status:', response.status);
-            
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Failed to create job: ${errorText}`);
-            }
-            
-            const result = await response.json();
-            console.log('Job created successfully:', result);
-            return result;
-        } catch (error) {
-            console.error('Error creating job:', error);
-            throw error;
-        }
-    }
-
-    async function deleteJob(jobId) {
-        try {
-            const response = await fetch(`${API_BASE_URL}/jobs/${jobId}`, {
-                method: 'DELETE',
-            });
-            
-            if (!response.ok) throw new Error('Failed to delete job');
-            return await response.json();
-        } catch (error) {
-            console.error('Error deleting job:', error);
-            throw error;
-        }
-    }
-
-    // Display Jobs
-    async function displayJobs() {
-        const jobsContainer = document.getElementById('jobsContainer');
-        jobsContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">Loading jobs...</p>';
-        
-        try {
-            const jobs = await fetchJobs();
-            console.log('Jobs to display:', jobs);
-            
-            if (jobs.length === 0) {
-                jobsContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No active job openings at the moment. Please check back later.</p>';
-                return;
-            }
-            
-            jobsContainer.innerHTML = '';
-            
-            jobs.forEach(job => {
-                const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
-                jobCard.innerHTML = `
-                    ${isLoggedIn ? `<div class="admin-controls">
-                        <button class="delete-job" data-id="${job._id}"><i class="fas fa-trash"></i></button>
-                    </div>` : ''}
-                    <h3 class="job-title">${job.title}</h3>
-                    <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
-                        <span><i class="fas fa-calendar-alt"></i> ${new Date(job.postedDate).toLocaleDateString()}</span>
-                    </div>
-                    <p class="job-description">${job.description}</p>
-                    <div class="job-actions">
-                        <button class="btn apply-btn" data-id="${job._id}">Apply Now</button>
-                    </div>
-                `;
-                jobsContainer.appendChild(jobCard);
-            });
-            
-            // Add event listeners to apply buttons
-            document.querySelectorAll('.apply-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const jobId = this.getAttribute('data-id');
-                    const job = jobs.find(j => j._id == jobId);
-                    showJobApplication(job);
-                });
-            });
-            
-            // Add event listeners to delete buttons (if admin is logged in)
+        // Update Auth Link
+        function updateAuthLink() {
+            const link = document.getElementById('authLink');
             if (isLoggedIn) {
-                document.querySelectorAll('.delete-job').forEach(button => {
-                    button.addEventListener('click', async function() {
-                        const jobId = this.getAttribute('data-id');
-                        if (confirm('Are you sure you want to delete this job posting?')) {
-                            try {
-                                await deleteJob(jobId);
-                                displayJobs();
-                                alert('Job deleted successfully!');
-                            } catch (error) {
-                                alert('Error deleting job. Please try again.');
-                            }
-                        }
-                    });
-                });
+                link.textContent = 'Logout';
+                link.href = '#';
+                link.onclick = logout;
+            } else {
+                link.textContent = 'Login';
+                link.href = '#';
+                link.onclick = (e) => { e.preventDefault(); document.getElementById('loginModal').classList.add('active'); };
             }
-        } catch (error) {
-            console.error('Display jobs error:', error);
-            jobsContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: red;">Error loading jobs. Please try again later.</p>';
         }
-    }
 
-    // Show Job Application Form
-    function showJobApplication(job) {
-        document.getElementById('applicationJobTitle').textContent = job.title;
-        document.getElementById('position').value = job.title;
-        document.getElementById('applicantLocation').value = '';
-        document.getElementById('applicantZipcode').value = '';
-        document.getElementById('jobApplication').style.display = 'block';
-        
-        document.getElementById('jobApplication').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Login Modal
-    const loginModal = document.getElementById('loginModal');
-    const closeLoginModal = document.getElementById('closeLoginModal');
-
-    closeLoginModal.addEventListener('click', function() {
-        loginModal.classList.remove('active');
-    });
-
-    window.addEventListener('click', function(e) {
-        if (e.target === loginModal) {
-            loginModal.classList.remove('active');
-        }
-    });
-
-    // Login Form Handler
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        if (username === 'admin' && password === 'password') {
-            isLoggedIn = true;
-            sessionStorage.setItem('ckLoggedIn', 'true');
-            loginModal.classList.remove('active');
-            document.getElementById('jobPost').style.display = 'block';
-            
+        // Logout
+        function logout() {
+            isLoggedIn = false;
+            sessionStorage.removeItem('ckLoggedIn');
+            document.getElementById('jobPost').style.display = 'none';
+            if (unsubscribeJobs) unsubscribeJobs();
             updateAuthLink();
-            displayJobs();
-            alert('Login successful! You can now post multiple jobs.');
-        } else {
-            alert('Invalid username or password. Try admin/password');
+            startListeningJobs();
+            alert('Logged out successfully.');
         }
-    });
 
-    // Job Post Form Handler
-    document.getElementById('jobPostForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const title = document.getElementById('jobTitle').value;
-        const location = document.getElementById('jobLocation').value;
-        const description = document.getElementById('jobDescription').value;
-        
-        try {
-            await createJob({
-                title,
-                location,
-                description
-            });
-            
-            await displayJobs();
-            
-            document.getElementById('jobPostForm').reset();
-            
-            alert('Job posted successfully! You can continue posting more jobs or logout when finished.');
-        } catch (error) {
-            console.error('Job post error:', error);
-            alert('Error posting job. Please check console for details and try again.');
-        }
-    });
+        // === FIRESTORE: Listen to Jobs ===
+        function startListeningJobs() {
+            if (unsubscribeJobs) unsubscribeJobs();
 
-    // Close Job Post Section
-    document.getElementById('closeJobPost').addEventListener('click', function() {
-        document.getElementById('jobPost').style.display = 'none';
-    });
+            const container = document.getElementById('jobsContainer');
+            container.innerHTML = '<p style="text-align:center;grid-column:1/-1;">Loading jobs...</p>';
 
-    // Job Application Form Handler
+            const q = window.firebaseQuery(
+                window.firebaseCollection(window.firebaseDB, 'jobs'),
+                window.firebaseOrderBy('postedDate', 'desc')
+            );
 
+            unsubscribeJobs = window.firebaseOnSnapshot(q, (snapshot) => {
+                const jobs = [];
+                snapshot.forEach(doc => jobs.push({ id: doc.id, ...doc.data() }));
 
-// FormSubmit Handlers - Using your existing form
+                if (jobs.length === 0) {
+                    container.innerHTML = '<p style="text-align:center;grid-column:1/-1;">No active job openings. Check back later.</p>';
+                    return;
+                }
 
-// Web3Forms Configuration
-const WEB3FORMS_ACCESS_KEY = '3e453b43-fc24-4d75-95d1-91ff6c1a2d33'; // ⚠️ Replace with your actual key
-
-// Job Application Form Handler - Web3Forms
-document.getElementById('jobApplicationForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    try {
-        // Validate required fields
-        const applicantLocation = document.getElementById('applicantLocation').value;
-        const applicantZipcode = document.getElementById('applicantZipcode').value;
-        
-        if (!applicantLocation || !applicantZipcode) {
-            alert('Please fill in both your location and zipcode.');
-            return;
-        }
-        
-        submitBtn.textContent = 'Submitting Application...';
-        submitBtn.disabled = true;
-        
-        const formData = new FormData(this);
-        
-        const response = await fetch(this.action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Object.fromEntries(formData))
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            alert('✅ Application submitted successfully! Please remember to email your resume to ckhiringsolutions@gmail.com');
-            this.reset();
-            document.getElementById('jobApplication').style.display = 'none';
-        } else {
-            throw new Error(result.message || 'Failed to submit application');
-        }
-        
-    } catch (error) {
-        console.error('Application form error:', error);
-        alert('❌ Please email your application directly to ckhiringsolutions@gmail.com');
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});
-
-// Contact Form Handler - Web3Forms
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    try {
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        const formData = new FormData(this);
-        
-        const response = await fetch(this.action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Object.fromEntries(formData))
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            alert('✅ Thank you for your message! We will get back to you soon.');
-            this.reset();
-        } else {
-            throw new Error(result.message || 'Failed to send message');
-        }
-        
-    } catch (error) {
-        console.error('Contact form error:', error);
-        alert('❌ Please contact us directly at ckhiringsolutions@gmail.com');
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});
-    
-
-    // Navigation Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                document.getElementById('main-nav').classList.remove('active');
-                
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
+                container.innerHTML = '';
+                jobs.forEach(job => {
+                    const card = document.createElement('div');
+                    card.className = 'job-card';
+                    card.innerHTML = `
+                        ${isLoggedIn ? `<div class="admin-controls">
+                            <button class="delete-job" data-id="${job.id}"><i class="fas fa-trash"></i></button>
+                        </div>` : ''}
+                        <h3 class="job-title">${job.title}</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                            <span><i class="fas fa-calendar-alt"></i> ${new Date(job.postedDate?.seconds * 1000).toLocaleDateString()}</span>
+                        </div>
+                        <p class="job-description">${job.description}</p>
+                        <div class="job-actions">
+                            <button class="btn apply-btn" data-id="${job.id}">Apply Now</button>
+                        </div>
+                    `;
+                    container.appendChild(card);
                 });
+
+                // Apply Buttons
+                document.querySelectorAll('.apply-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        const job = jobs.find(j => j.id === btn.dataset.id);
+                        showJobApplication(job);
+                    };
+                });
+
+                // Delete Buttons (Admin)
+                if (isLoggedIn) {
+                    document.querySelectorAll('.delete-job').forEach(btn => {
+                        btn.onclick = async () => {
+                            if (confirm('Delete this job?')) {
+                                try {
+                                    await window.firebaseDeleteDoc(window.firebaseDoc(window.firebaseDB, 'jobs', btn.dataset.id));
+                                    alert('Job deleted');
+                                } catch (e) { alert('Error'); }
+                            }
+                        };
+                    });
+                }
+            }, (err) => {
+                console.error(err);
+                container.innerHTML = '<p style="color:red;text-align:center;">Error loading jobs.</p>';
+            });
+        }
+
+        // Post Job
+        document.getElementById('jobPostForm').addEventListener('submit', async e => {
+            e.preventDefault();
+            const title = document.getElementById('jobTitle').value.trim();
+            const location = document.getElementById('jobLocation').value.trim();
+            const description = document.getElementById('jobDescription').value.trim();
+
+            if (!title || !location || !description) return alert('Fill all fields');
+
+            try {
+                await window.firebaseAddDoc(window.firebaseCollection(window.firebaseDB, 'jobs'), {
+                    title, location, description,
+                    postedDate: window.firebaseServerTimestamp()
+                });
+                e.target.reset();
+                alert('Job posted!');
+            } catch (err) {
+                console.error(err);
+                alert('Failed to post job');
             }
         });
-    });
 
-    document.querySelector('a[href="#jobs"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('jobs').scrollIntoView({ behavior: 'smooth' });
-    });
+        document.getElementById('closeJobPost').onclick = () => {
+            document.getElementById('jobPost').style.display = 'none';
+        };
 
-    // Initialize the page
-    document.addEventListener('DOMContentLoaded', function() {
-        updateAuthLink();
-        displayJobs();
-        
-        if (isLoggedIn) {
-            document.getElementById('jobPost').style.display = 'block';
+        // Show Application Form
+        function showJobApplication(job) {
+            document.getElementById('applicationJobTitle').textContent = job.title;
+            document.getElementById('position').value = job.title;
+            document.getElementById('jobApplication').style.display = 'block';
+            document.getElementById('jobApplication').scrollIntoView({ behavior: 'smooth' });
         }
-    });
-</script>
+
+        // Login Form
+        document.getElementById('loginForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            if (u === 'admin' && p === 'password') {
+                isLoggedIn = true;
+                sessionStorage.setItem('ckLoggedIn', 'true');
+                document.getElementById('loginModal').classList.remove('active');
+                document.getElementById('jobPost').style.display = 'block';
+                updateAuthLink();
+                alert('Login successful!');
+            } else {
+                alert('Invalid credentials. Try: admin / password');
+            }
+        });
+
+        document.getElementById('closeLoginModal').onclick = () => {
+            document.getElementById('loginModal').classList.remove('active');
+        };
+
+        // Web3Forms Handlers
+        document.getElementById('jobApplicationForm').addEventListener('submit', async e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const txt = btn.textContent;
+            try {
+                btn.textContent = 'Submitting...'; btn.disabled = true;
+                const fd = new FormData(e.target);
+                const res = await fetch(e.target.action, {
+                    method: 'POST',
+                    body: JSON.stringify(Object.fromEntries(fd)),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const json = await res.json();
+                if (json.success) {
+                    alert('Application sent! Email resume to ckhiringsolutions@gmail.com');
+                    e.target.reset();
+                    document.getElementById('jobApplication').style.display = 'none';
+                } else throw new Error();
+            } catch { alert('Failed. Email directly to ckhiringsolutions@gmail.com'); }
+            finally { btn.textContent = txt; btn.disabled = false; }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', async e => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const txt = btn.textContent;
+            try {
+                btn.textContent = 'Sending...'; btn.disabled = true;
+                const fd = new FormData(e.target);
+                const res = await fetch(e.target.action, {
+                    method: 'POST',
+                    body: JSON.stringify(Object.fromEntries(fd)),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const json = await res.json();
+                if (json.success) {
+                    alert('Message sent!');
+                    e.target.reset();
+                } else throw new Error();
+            } catch { alert('Failed. Email to ckhiringsolutions@gmail.com'); }
+            finally { btn.textContent = txt; btn.disabled = false; }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href');
+                if (id === '#') return;
+                const el = document.querySelector(id);
+                if (el) {
+                    e.preventDefault();
+                    document.getElementById('main-nav').classList.remove('active');
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            updateAuthLink();
+            startListeningJobs();
+            if (isLoggedIn) document.getElementById('jobPost').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
